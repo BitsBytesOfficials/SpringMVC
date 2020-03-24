@@ -10,5 +10,7 @@
 <h1>Welcome To ${user}</h1>
 <h3>${date}</h3>
 
+<a href="hello">Click here for one more view</a>
+
 </body>
 </html>
