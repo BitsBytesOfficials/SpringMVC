@@ -19,4 +19,9 @@ public class HomeController {
 		return "home";
 		
 	}
+	
+	@RequestMapping("/hello")
+	public String showSecond() {
+		return "secondview";
+	}
 }
