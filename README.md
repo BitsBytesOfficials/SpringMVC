@@ -4,29 +4,29 @@ Web application using Spring MVC
 
 
 > ## WEB-INF
->> ### *web.xml* 
+>> ### web.xml 
        is the website descripter in which adding the spring-servlet.xml
  
->> ### *spring-servlet.xml*
+>> ### spring-servlet.xml
    is the configuration file for the Spring Framework in which we define 
     * the View Controller here
     * what kind of extenstion used in view state
    
->> ### *view Folder*
-      view is the One Part of the Model **View** Controller
+>> ### view Folder
+   view is the One Part of the Model **View** Controller
    
    
    
    
 > ## com.niit.techno.springmvc.controller
-		this package is used for the Model View **Controller**
+this package is used for the Model View **Controller**
 
 
 >> ### HomeController 
      is the class who control the Home Access 
      
       import org.springframework.stereotype.Controller
-> #### Annotations
+> ## Annotations
 
 >> Controller  
         Make the Controller Class
