@@ -92,4 +92,84 @@ this package is used for the Model View **Controller**
 		return "viewEmployee";
 	}
 	}
+	
+> # SPRING MVC FORMS
+
+>> ###### Reservation is used for Creating the *SPRING MVC FORM*
+   
+  **MODEL** [*com.niit.tlc.springmvc.model*]
+   
+   
+    public class Reservation {
+	private String firstName;
+	private String lastName;
+	private String gender;
+	private String[] food;
+	private String cityForm;
+	private String cityTo;
+       
+  **Controller** [*com.niit.tlc.springmvc.controller*]
+	    
+	   @Controller
+		public class ReservationController {
+
+
+		@RequestMapping(value="/bookingForm")
+		public String reservationForm(ModelMap model) {
+			Reservation res=new Reservation();
+			model.addAttribute("reservationForm", res);
+			return "Reservationformview";//reservation Page
+		}
+		@RequestMapping("/submitForm")
+		public String submitForm(@ModelAttribute("reservationForm") Reservation res1)		{
+			System.out.println("\n"+res1.getFirstName()+"\n");
+			return "confirmationForm";
+		}
+	}
+ 
+  **VIEWS** 
+    
+      **Reservationformview.jsp** is used for Reserve the food 
+    
+       **ConfirmationForm.jsp** is used for display the Reserved Food
+
+
+
+> # HTML FORM WITH CONTROLLER 
+
+>> **HTML FROM** 
+       
+	1. Signup.jsp
+   
+   
+>> **Controller** 
+     
+    @RequestMapping("/signIn")
+	public String showSignUp() {
+		return "signUp";
+	}
+
+	@RequestMapping("/checklogin")
+	public String authenticate(HttpServletRequest req, ModelMap model) {
+		
+			if (req.getParameter("uname").equalsIgnoreCase("Deepanshu") && req.getParameter("psw").equals("deep")) {
+				model.addAttribute("message", "SucessFully Login");
+				return "success";
+			}
+			else
+			{
+
+				model.addAttribute("message", "entered Data is Incorrect");
+				return "errorPage";
+			}
+		
+	}
+	
+	
+	
+>> **VIEWS** [webapp/WEB-INF/views]
+
+    1 sucess.jsp
+    2. errorPage.jsp
+     
 
