@@ -12,17 +12,26 @@ public class LoginController {
 	public String showLoginForm() {
 		return "login";
 	}
+
+	@RequestMapping("/signIn")
+	public String showSignUp() {
+		return "signUp";
+	}
+
 	@RequestMapping("/checklogin")
-	public String authenticate(HttpServletRequest req,ModelMap model) {
-		if(req.getParameter("uname").equalsIgnoreCase("Deepanshu")
-				&& req.getParameter("psw").equals("deep"))
-		{
-			model.addAttribute("username","Deepanshu");
-			return "profile";
-		}
+	public String authenticate(HttpServletRequest req, ModelMap model) {
 		
-		model.addAttribute("message","entered Data is Incorrect");
-		return "login";
+			if (req.getParameter("uname").equalsIgnoreCase("Deepanshu") && req.getParameter("psw").equals("deep")) {
+				model.addAttribute("message", "SucessFully Login");
+				return "success";
+			}
+			else
+			{
+
+				model.addAttribute("message", "entered Data is Incorrect");
+				return "errorPage";
+			}
+		
 	}
 
 }
