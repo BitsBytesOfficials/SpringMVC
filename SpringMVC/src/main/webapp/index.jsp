@@ -6,5 +6,11 @@
 
 <br><br>
 <a href="login">Click here to login</a> <!--  Controller -->
+<br>
+<a href="employeeForm">Register an Employee</a>
+<br>
+<a href="bookingForm">Train Reservation</a>
+<a href="signIn">Sign Up</a>
+
 </body>
 </html>
