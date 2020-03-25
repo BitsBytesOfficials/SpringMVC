@@ -60,3 +60,36 @@ this package is used for the Model View **Controller**
      			return "home";// it's finding the home.jsp in view folder
      		}
      	
+# 25/03/2020
+
+## SalesDemo is the practice Asssigment given by Sir for Practice Purpose
+
+## SpringMVC
+###  Spring MVC Forms [ com.niit.tlc.springmvc.model]
+ 
+> Employee model is created
+ 
+> ### com.niit.tlc.springmvc.controller
+
+>> EmployeeController added  
+  
+
+	@Controller
+	public class EmployeeController {   
+	@RequestMapping(value="employeeForm",method=RequestMethod.GET)
+	 public String register(Model model) {
+		Employee theEmp=new Employee();
+		model.addAttribute("employee",theEmp);
+		 return "registerEmployee";
+	 }
+	
+	@RequestMapping(value="/addEmployee",method=RequestMethod.POST)
+	public String submit(@ModelAttribute("employee")Employee employee,ModelMap model) {
+		model.addAttribute("name", employee.getName());
+		model.addAttribute("contactNumber", employee.getContactNumber());
+		model.addAttribute("id", employee.getId());
+		
+		return "viewEmployee";
+	}
+	}
+
