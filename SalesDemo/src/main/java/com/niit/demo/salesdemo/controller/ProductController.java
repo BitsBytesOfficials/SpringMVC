@@ -11,6 +11,7 @@ public class ProductController {
 
 	@RequestMapping("/sell")
 	public String sellProduct(ModelMap model) {
+		
 		model.addAttribute("name","Computers");
 		model.addAttribute("sellDate",new Date());
 		model.addAttribute("quant","5");
@@ -20,6 +21,7 @@ public class ProductController {
 	
 	@RequestMapping("/buy")
 	public String buyProduct(ModelMap model) {
+		model.addAttribute("username","Deepanshu Gupta");
 		model.addAttribute("name","Computers");
 		model.addAttribute("sellDate",new Date());
 		model.addAttribute("quant","5");
